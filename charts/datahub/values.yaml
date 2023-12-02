@@ -7,7 +7,6 @@ datahub:
       repository: linkedin/datahub-gms
       # tag: "v0.11.0 # defaults to .global.datahub.version
 
-
   datahub-frontend:
     enabled: true
     image:
@@ -45,13 +44,11 @@ datahub:
       repository: linkedin/datahub-elasticsearch-setup
       # tag: "v0.11.0 # defaults to .global.datahub.version
 
-
   kafkaSetupJob:
     enabled: true
     image:
       repository: linkedin/datahub-kafka-setup
       # tag: "v0.11.0 # defaults to .global.datahub.version
-
 
   mysqlSetupJob:
     enabled: true
@@ -59,20 +56,17 @@ datahub:
       repository: acryldata/datahub-mysql-setup
       # tag: "v0.11.0 # defaults to .global.datahub.version
 
-
   datahubUpgrade:
     enabled: true
     image:
       repository: acryldata/datahub-upgrade
       # tag: "v0.11.0 # defaults to .global.datahub.version
 
-
   datahub-ingestion-cron:
     enabled: false
     image:
       repository: acryldata/datahub-ingestion
       # tag: "v0.11.0 # defaults to .global.datahub.version
-
 
   global:
     graph_service_impl: neo4j
