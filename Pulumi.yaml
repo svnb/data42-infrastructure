@@ -1,0 +1,6 @@
+name: infrastructure
+runtime: nodejs
+description: Infrastructure components
+config:
+  snowflake:account: BQ47791.eu-central-1
+  snowflake:role: DEPLOYMENT
