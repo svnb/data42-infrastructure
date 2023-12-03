@@ -63,11 +63,33 @@ datahub:
       # tag: "v0.11.0 # defaults to .global.datahub.version
 
   datahub-ingestion-cron:
-    enabled: false
+    enabled: true
     image:
       repository: acryldata/datahub-ingestion
+      tag: head
       # tag: "v0.11.0 # defaults to .global.datahub.version
-
+    crons:
+      snowflake:
+        schedule: "1 * * * *" # Every hour
+        recipe:
+          configmapName: recipe-config
+          fileName: snowflake_recipe.yml
+        envFromSecrets:
+          SNOWFLAKE_ACCOUNT:
+            secret: snowflake
+            key: account
+          SNOWFLAKE_USERNAME:
+            secret: snowflake
+            key: username
+          SNOWFLAKE_PASSWORD:
+            secret: snowflake
+            key: password
+          SNOWFLAKE_WAREHOUSE:
+            secret: snowflake
+            key: warehouse
+          SNOWFLAKE_ROLE:
+            secret: snowflake
+            key: role
   global:
     graph_service_impl: neo4j
 

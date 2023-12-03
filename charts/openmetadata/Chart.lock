@@ -1,0 +1,6 @@
+dependencies:
+- name: openmetadata-dependencies
+  repository: https://helm.open-metadata.org/
+  version: 1.2.3
+digest: sha256:de2fcd7f118a3f7eefa0b9078595f5f6e12120f285994c97b9838e268182d5e5
+generated: "2023-12-03T19:16:47.343004+01:00"

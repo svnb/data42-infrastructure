@@ -13,7 +13,7 @@ export class Datahub extends pulumi.ComponentResource {
   constructor(
     name: string,
     args: DatahubArgs,
-    opts?: pulumi.ComponentResourceOptions,
+    opts?: pulumi.ComponentResourceOptions
   ) {
     super("pkg:index:Datahub", name, opts);
 
@@ -22,6 +22,7 @@ export class Datahub extends pulumi.ComponentResource {
     });
     this.k8s = new DatahubK8sComponent("k8s", {
       namespace: args.name,
+      snowflake: this.snowflake,
     });
 
     this.registerOutputs({

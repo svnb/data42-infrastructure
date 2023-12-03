@@ -3,18 +3,18 @@ import * as snowflake from "@pulumi/snowflake";
 import * as random from "@pulumi/random";
 import * as k8s from "@pulumi/kubernetes";
 
-interface DatahubSnowflakeArgs {
+interface OpenmetadataSnowflakeArgs {
   name: string;
 }
 
-export class DatahubSnowflakeComponent extends pulumi.ComponentResource {
+export class OpenMetadataSnowflake extends pulumi.ComponentResource {
   user: snowflake.User;
   role: snowflake.Role;
   warehouse: snowflake.Warehouse;
 
   constructor(
     name: string,
-    args: DatahubSnowflakeArgs,
+    args: OpenmetadataSnowflakeArgs,
     opts?: pulumi.ComponentResourceOptions
   ) {
     super("pkg:index:DatahubSnowflake", name, opts);
