@@ -1,5 +1,0 @@
-datahub-prerequisites:
-  neo4j:
-    volumes:
-      data:
-        mode: defaultStorageClass

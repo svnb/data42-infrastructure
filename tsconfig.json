@@ -10,8 +10,10 @@
     "pretty": true,
     "noFallthroughCasesInSwitch": true,
     "noImplicitReturns": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "types": ["node"],
+    "typeRoots": ["node_modules/@types"]
   },
   "files": ["index.ts"],
-  "include": ["src/"]
+  "include": ["src/*"]
 }

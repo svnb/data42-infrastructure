@@ -2,7 +2,7 @@
   "name": "infrastructure",
   "main": "index.ts",
   "devDependencies": {
-    "@types/node": "^16",
+    "@types/node": "^16.18.67",
     "prettier": "^3.1.0"
   },
   "scripts": {
@@ -12,9 +12,12 @@
     "lint": "npx prettier . --check"
   },
   "dependencies": {
+    "@pulumi/azure-native": "^2.20.1",
+    "@pulumi/azuread": "^5.46.0",
     "@pulumi/kubernetes": "^4.5.5",
     "@pulumi/pulumi": "^3.0.0",
     "@pulumi/random": "^4.14.0",
-    "@pulumi/snowflake": "^0.41.0"
+    "@pulumi/snowflake": "^0.41.0",
+    "@pulumi/tls": "^4.11.1"
   }
 }

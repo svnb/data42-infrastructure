@@ -1,9 +1,0 @@
-dependencies:
-- name: datahub-prerequisites
-  repository: https://helm.datahubproject.io/
-  version: 0.1.4
-- name: datahub
-  repository: https://helm.datahubproject.io/
-  version: 0.3.12
-digest: sha256:910b546f9c6598a39e472836faf11eae812a955455beb11bf6c5f0a56c49368c
-generated: "2023-11-28T21:51:24.624635+01:00"

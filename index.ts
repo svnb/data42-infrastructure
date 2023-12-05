@@ -1,15 +1,21 @@
 import * as pulumi from "@pulumi/pulumi";
-import { Datahub } from "./src/datahub";
+import { CloudProvider, OpenMetadata } from "./src";
+import { K8sCluster } from "./src/k8s";
 
 interface InfrastructureArgs {
-  datahub: {
+  openmetadata: {
     namespace: string;
   };
 }
 
 const config = new pulumi.Config();
-const data = config.requireObject<InfrastructureArgs>("data");
+const cloudProvider = config.require<CloudProvider>("cloudProvider");
 
-export const datahub = new Datahub("datahub", {
-  name: data.datahub.namespace,
+const k8sCluster = new K8sCluster("data42", {
+  cloudProvider,
+});
+
+new OpenMetadata("openmetadata", {
+  name: "openmetadata",
+  k8sProvider: k8sCluster.provider,
 });
